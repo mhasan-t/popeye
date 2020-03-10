@@ -1,0 +1,15 @@
+@font-face {
+    src: url('../../Fonts/BAUHS93.TTF');
+    src: url('../../Fonts/BRITANIC.TTF');
+}
+
+#titleText{
+    -fx-font-family: 'Britannic Bold';
+    -fx-font-size: 45;
+}
+
+
+.tileText{
+    -fx-font-family: 'Bauhaus 93';
+    -fx-font-size: 18;
+}
