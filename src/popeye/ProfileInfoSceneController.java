@@ -5,7 +5,9 @@
  */
 package popeye;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -92,6 +94,36 @@ public class ProfileInfoSceneController implements Initializable {
     }
     
     
+    @FXML
+    private void logoutBtnAction(ActionEvent event){
+        try{
+            File f=new File("loginState.txt");
+            PrintWriter pw=new PrintWriter(f);
+            pw.println("no");
+            pw.close();
+            
+            FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(getClass().getResource("loginScene.fxml"));
+            Parent parent = (Parent) loader.load();
+
+            loginSceneController controller;
+
+            controller = loader.getController();
+             controller.initialize(null, null);
+
+             Stage window = (Stage)nameInfo.getScene().getWindow();
+             Scene scene = new Scene(parent);
+
+             window.setScene(scene);
+             window.show();
+            
+        }
+        catch(IOException e){
+                e.printStackTrace();
+        }
+    }
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -103,28 +135,28 @@ public class ProfileInfoSceneController implements Initializable {
                     nameInfo.setText(rs.getString("fullname"));
                 }
                 else{
-                    nameInfo.setText("ERROR WHILE LOADING NAME");
+                    nameInfo.setText("Name has not been set yet.");
                 }
                 
                 if( rs.getString("fullname") != null ){
                     heightInfo.setText(rs.getString("height"));
                 }
                 else{
-                    heightInfo.setText("ERROR WHILE LOADING HEIGHT");
+                    heightInfo.setText("Height has not been set yet.");
                 }
                 
                 if( rs.getString("fullname") != null ){
                     weightInfo.setText(rs.getString("weight"));
                 }
                 else{
-                    weightInfo.setText("ERROR WHILE LOADING WEIGHT");
+                    weightInfo.setText("Weight has not been set yet.");
                 }
                 
                 if( rs.getString("fullname") != null ){
                     ageInfo.setText(rs.getString("age"));
                 }
                 else{
-                    ageInfo.setText("ERROR WHILE LOADING AGE");
+                    ageInfo.setText("Age has not been set yet.");
                 }
             
             } catch (SQLException ex) {

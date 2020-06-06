@@ -3,10 +3,11 @@
     src: url('../../Fonts/BRITANIC.TTF');
     src: url('../../Fonts/AGENCYB.TTF');
     src: url('../../Fonts/BERNHC.TTF');
+    src: url('../../Fonts/SNAP____.TTF');
 }
 
 #titleText{
-    -fx-font-family: 'Britannic Bold';
+    -fx-font-family: 'Snap ITC';
     -fx-font-size: 45;
 }
 
@@ -39,4 +40,16 @@
 #editUsr{
     -fx-font-family: 'Bernard MT Condensed';
     -fx-font-size: 15;
+}
+
+#loginBtn{
+    -fx-font-family: 'Bauhaus 93';
+    -fx-font-size: 15;
+    -fx-background-color:  #34ebe1;
+}
+
+.redBtn{
+    -fx-font-family: 'Bauhaus 93';
+    -fx-font-size: 15;
+    -fx-background-color:   #ff0048;
 }

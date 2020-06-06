@@ -15,7 +15,7 @@
     <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label id="titleText" fx:id="title" layoutX="556.0" layoutY="14.0" prefHeight="64.0" prefWidth="168.0" text="POPEYE" />
+            <Label id="titleText" fx:id="title" layoutX="556.0" layoutY="14.0" prefHeight="64.0" prefWidth="249.0" text="POPEYE" />
             <Label layoutX="144.0" layoutY="160.0" prefHeight="46.0" prefWidth="338.0" styleClass="tileText" text="User Profile" />
             <Label layoutX="144.0" layoutY="231.0" prefHeight="30.0" prefWidth="109.0" styleClass="nameText" text="Name :" />
             <Label layoutX="144.0" layoutY="261.0" prefHeight="30.0" prefWidth="109.0" styleClass="nameText" text="Age:" />
@@ -31,6 +31,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
+            <Button layoutX="1148.0" layoutY="678.0" mnemonicParsing="false" onAction="#logoutBtnAction" prefHeight="26.0" prefWidth="117.0" styleClass="redBtn" text="Log Out" />
          </children>
       </AnchorPane>
    </center>

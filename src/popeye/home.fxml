@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,14 +19,10 @@
    <stylesheets>
   <URL value="@staticfiles/css/home.css" />
 </stylesheets>
-    
-    <bottom>
-      <AnchorPane prefHeight="38.0" prefWidth="910.0" BorderPane.alignment="CENTER" />
-   </bottom>
    <center>
       <AnchorPane prefHeight="598.0" prefWidth="910.0" style="-fx-background-color: #edf4ff;" BorderPane.alignment="CENTER">
          <children>
-            <TilePane alignment="CENTER" layoutX="119.0" layoutY="128.0" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <TilePane alignment="CENTER" layoutX="121.0" layoutY="180.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
                   <VBox alignment="CENTER" onMouseClicked="#goToProfileInfo" prefHeight="228.0" prefWidth="151.0">
                      <children>
@@ -42,7 +39,7 @@
                   </VBox>
                </children>
             </TilePane>
-            <TilePane alignment="CENTER" layoutX="355.0" layoutY="128.0" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <TilePane alignment="CENTER" layoutX="348.0" layoutY="180.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
                   <VBox alignment="CENTER" prefHeight="228.0" prefWidth="151.0">
                      <children>
@@ -59,7 +56,7 @@
                   </VBox>
                </children>
             </TilePane>
-            <TilePane alignment="CENTER" layoutX="587.0" layoutY="128.0" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <TilePane alignment="CENTER" layoutX="581.0" layoutY="180.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
                   <VBox alignment="CENTER" prefHeight="228.0" prefWidth="151.0">
                      <children>
@@ -77,8 +74,8 @@
                   </VBox>
                </children>
             </TilePane>
-            <Label id="titleText" fx:id="title" layoutX="371.0" layoutY="23.0" prefHeight="64.0" prefWidth="168.0" text="POPEYE" />
-            <TilePane alignment="CENTER" layoutX="119.0" layoutY="393.0" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <Label id="titleText" fx:id="title" layoutX="464.0" layoutY="30.0" prefHeight="64.0" prefWidth="246.0" text="POPEYE" />
+            <TilePane alignment="CENTER" layoutX="805.0" layoutY="180.0" onMouseClicked="#goToFeed" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
                   <VBox alignment="CENTER" prefHeight="228.0" prefWidth="151.0">
                      <children>
@@ -95,7 +92,7 @@
                   </VBox>
                </children>
             </TilePane>
-            <TilePane alignment="CENTER" layoutX="355.0" layoutY="393.0" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <TilePane alignment="CENTER" layoutX="1042.0" layoutY="180.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
                   <VBox alignment="CENTER" prefHeight="228.0" prefWidth="151.0">
                      <children>
@@ -112,6 +109,7 @@
                   </VBox>
                </children>
             </TilePane>
+            <Button layoutX="1124.0" layoutY="679.0" mnemonicParsing="false" onAction="#logoutBtnAction" prefHeight="26.0" prefWidth="117.0" styleClass="redBtn" text="Log Out" />
          </children>
       </AnchorPane>
    </center>

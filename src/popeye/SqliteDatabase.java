@@ -26,10 +26,13 @@ public class SqliteDatabase {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:database.db");
             stmt = c.createStatement();
-            status = "CREATED";
-//            stmt.executeUpdate("insert into user values('admin', '1234')");
-//            stmt.executeUpdate("create table user (username string, password string)");
-            
+
+//            stmt.executeUpdate("insert into post values('admin', 'whatwhatwhatwhatwhatwhat')");
+//            this.enterPostTableData("test", "testing");
+//            System.out.println("executed");
+//            stmt.executeUpdate("create table post (username string, post string)");
+//            System.out.println("new table created");
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -64,6 +67,15 @@ public class SqliteDatabase {
         try{
             stmt.executeUpdate("insert into user  values('"+username+"','"+password+"' , null,null,null,null,null)");
 //            this.stmt.executeUpdate("insert into user values('first', 10)");
+        }
+       catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    void enterPostTableData(String username, String post){
+        try{
+            stmt.executeUpdate("insert into post values('"+username+"', '"+post+"')");
         }
        catch (Exception e){
             e.printStackTrace();

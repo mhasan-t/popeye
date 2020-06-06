@@ -14,10 +14,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -25,64 +27,75 @@ import javafx.stage.Stage;
  *
  * @author Tahnoon
  */
-public class HomeController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
-    
-    String currentUser;
+public class NewsFeedController implements Initializable {
+        String currentUser;
     SqliteDatabase db;
+    
     public void setUser(String usr){
         currentUser = usr;
     }
     public void setDB(SqliteDatabase d){
         db = d;
     }
+    
+    
     @FXML
-    Label title;
+    TextField makeApost;
+    
+    @FXML
+    Button postBtn;
+    
+    @FXML
+    Button gobackBtn;
+    
+    @FXML
+    Label statusMsg;
     
 
     
     @FXML
-    private void goToProfileInfo() throws IOException{
-        FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(getClass().getResource("profileInfoScene.fxml"));
-        Parent parent = (Parent) loader.load();
-
-        ProfileInfoSceneController controller;
-        controller = loader.getController();
-        controller.setDB(db);
-         controller.setUser(currentUser);
-         controller.initialize(null, null);
-         
-         Stage window = (Stage) title.getScene().getWindow();
-         Scene scene = new Scene(parent);
-         
-         window.setScene(scene);
-         window.show();
-       
+    private void postButtonAction(ActionEvent event) {
+        String post="";
+//        System.out.println(makeApost.getText());
+        try{
+            post = makeApost.getText();
+            
+        }
+        catch(Exception e){
+            post="";
+        }
+        if( !post.equals("") ){
+            db.enterPostTableData(currentUser, post);
+            statusMsg.setText("Posted!");
+        }
+        else{
+            statusMsg.setText("You must write something to post!");
+        }
     }
+    
     
         @FXML
-    private void goToFeed() throws IOException{
+    public void goHome(ActionEvent event) throws IOException{
+        
         FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(getClass().getResource("newsFeed.fxml"));
+        loader.setLocation(getClass().getResource("home.fxml"));
         Parent parent = (Parent) loader.load();
-
-        NewsFeedController controller;
+//         Parent menuSceneRoot = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+         
+         
+        HomeController controller;
         controller = loader.getController();
-        controller.setDB(db);
          controller.setUser(currentUser);
+         controller.setDB(db);
          controller.initialize(null, null);
          
-         Stage window = (Stage) title.getScene().getWindow();
+         Stage window = (Stage)makeApost.getScene().getWindow();
          Scene scene = new Scene(parent);
          
          window.setScene(scene);
          window.show();
-       
     }
+    
     
     @FXML
     private void logoutBtnAction(ActionEvent event){
@@ -101,7 +114,7 @@ public class HomeController implements Initializable {
             controller = loader.getController();
              controller.initialize(null, null);
 
-             Stage window = (Stage)title.getScene().getWindow();
+             Stage window = (Stage)makeApost.getScene().getWindow();
              Scene scene = new Scene(parent);
 
              window.setScene(scene);
@@ -112,6 +125,7 @@ public class HomeController implements Initializable {
                 e.printStackTrace();
         }
     }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

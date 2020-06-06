@@ -11,6 +11,7 @@
     -fx-font-size: 45;
 }
 
+ 
 .tileText{
     -fx-font-family: 'Bauhaus 93';
     -fx-font-size: 20;
@@ -32,17 +33,13 @@
     -fx-font-size: 17;
 }
 
-#updateBtn{
-    -fx-font-family: 'Bernard MT Condensed';
+.greenBtn{
+    -fx-background-color: #008710;
+    -fx-font-family: 'Britannic Bold';
     -fx-font-size: 17;
 }
 
-#editUsr{
-    -fx-font-family: 'Bernard MT Condensed';
-    -fx-font-size: 15;
-}
-
-#loginBtn{
+.blueBtn{
     -fx-font-family: 'Bauhaus 93';
     -fx-font-size: 15;
     -fx-background-color:  #34ebe1;
@@ -52,4 +49,9 @@
     -fx-font-family: 'Bauhaus 93';
     -fx-font-size: 15;
     -fx-background-color:   #ff0048;
+}
+
+.britanicPromt{
+    -fx-font-family: 'Britannic Bold';
+    -fx-font-size: 16;
 }

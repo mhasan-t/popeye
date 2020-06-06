@@ -5,9 +5,15 @@
  */
 package popeye;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,10 +56,15 @@ public class loginSceneController implements Initializable {
         else if(usrExists.equals(passwd.getText())){
 //            loginMsg.setText("got it");
             try{
+                File f=new File("loginState.txt");
+                PrintWriter pw=new PrintWriter(f);
+                pw.println("yes\n"+usrName.getText());
+                pw.close();
+                
                 goHome();
             }
             catch(IOException e){
-                System.out.println("line 54 login scene controller");
+                e.printStackTrace();
             }
         }
         else{
@@ -113,6 +124,10 @@ public class loginSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         db=new SqliteDatabase();
+        
+        
+        
+        
     }    
     
 }

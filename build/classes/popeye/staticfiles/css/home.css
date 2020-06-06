@@ -1,10 +1,11 @@
 @font-face {
     src: url('../../Fonts/BAUHS93.TTF');
     src: url('../../Fonts/BRITANIC.TTF');
+    src: url('../../Fonts/SNAP____.TTF');
 }
 
 #titleText{
-    -fx-font-family: 'Britannic Bold';
+    -fx-font-family: 'Snap ITC';
     -fx-font-size: 45;
 }
 
@@ -12,4 +13,10 @@
 .tileText{
     -fx-font-family: 'Bauhaus 93';
     -fx-font-size: 18;
+}
+
+.redBtn{
+    -fx-font-family: 'Bauhaus 93';
+    -fx-font-size: 15;
+    -fx-background-color:   #ff0048;
 }
