@@ -19,8 +19,8 @@
             <Label layoutX="144.0" layoutY="160.0" prefHeight="46.0" prefWidth="338.0" styleClass="tileText" text="User Profile" />
             <Label layoutX="144.0" layoutY="231.0" prefHeight="30.0" prefWidth="109.0" styleClass="nameText" text="Name :" />
             <Label layoutX="144.0" layoutY="261.0" prefHeight="30.0" prefWidth="109.0" styleClass="nameText" text="Age:" />
-            <Label layoutX="144.0" layoutY="291.0" prefHeight="30.0" prefWidth="109.0" styleClass="nameText" text="Height:" />
-            <Label layoutX="144.0" layoutY="321.0" prefHeight="30.0" prefWidth="109.0" styleClass="nameText" text="Weight:" />
+            <Label layoutX="144.0" layoutY="291.0" prefHeight="30.0" prefWidth="109.0" styleClass="nameText" text="Height (cm):" />
+            <Label layoutX="144.0" layoutY="321.0" prefHeight="30.0" prefWidth="109.0" styleClass="nameText" text="Weight (kg):" />
             <Label fx:id="nameInfo" layoutX="258.0" layoutY="231.0" prefHeight="30.0" prefWidth="341.0" styleClass="infoText" />
             <Label fx:id="ageInfo" layoutX="258.0" layoutY="261.0" prefHeight="30.0" prefWidth="341.0" styleClass="infoText" />
             <Label fx:id="heightInfo" layoutX="258.0" layoutY="291.0" prefHeight="30.0" prefWidth="341.0" styleClass="infoText" />

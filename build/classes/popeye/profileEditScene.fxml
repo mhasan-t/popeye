@@ -22,9 +22,9 @@
             <TextField fx:id="name" layoutX="627.0" layoutY="224.0" prefHeight="26.0" prefWidth="192.0" />
             <Label layoutX="421.0" layoutY="256.0" prefHeight="39.0" prefWidth="149.0" styleClass="nameText" text="Age :" />
             <TextField fx:id="age" layoutX="627.0" layoutY="263.0" prefHeight="26.0" prefWidth="192.0" />
-            <Label layoutX="421.0" layoutY="295.0" prefHeight="39.0" prefWidth="149.0" styleClass="nameText" text="Height :" />
+            <Label layoutX="421.0" layoutY="295.0" prefHeight="39.0" prefWidth="149.0" styleClass="nameText" text="Height (cm):" />
             <TextField fx:id="height" layoutX="627.0" layoutY="302.0" prefHeight="26.0" prefWidth="192.0" />
-            <Label layoutX="421.0" layoutY="334.0" prefHeight="39.0" prefWidth="149.0" styleClass="nameText" text="Weight :" />
+            <Label layoutX="421.0" layoutY="334.0" prefHeight="39.0" prefWidth="149.0" styleClass="nameText" text="Weight (kg):" />
             <TextField fx:id="weight" layoutX="627.0" layoutY="341.0" prefHeight="26.0" prefWidth="192.0" />
             <Button id="updateBtn" layoutX="708.0" layoutY="419.0" mnemonicParsing="false" onAction="#updateButtonAction" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #008710;" text="Update" />
             <Label fx:id="statusMsg" layoutX="220.0" layoutY="513.0" prefHeight="39.0" prefWidth="400.0" />

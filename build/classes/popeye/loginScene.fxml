@@ -25,11 +25,11 @@
             <TextField fx:id="usrName" layoutX="578.0" layoutY="242.0" prefHeight="26.0" prefWidth="178.0" />
             <TextField fx:id="passwd" layoutX="578.0" layoutY="283.0" prefHeight="26.0" prefWidth="180.0" />
             <Button fx:id="loginBtn" layoutX="657.0" layoutY="334.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="46.0" prefWidth="102.0" text="Log in" />
-            <Label fx:id="loginMsg" layoutX="467.0" layoutY="417.0" prefHeight="30.0" prefWidth="350.0" />
+            <Label fx:id="loginMsg" layoutX="585.0" layoutY="398.0" prefHeight="30.0" prefWidth="173.0" styleClass="infoText" />
             <Label layoutX="689.0" layoutY="438.0" onMouseClicked="#goToSignUp" styleClass="infoText" text="No Account?" />
             <Label id="titleText" fx:id="title" layoutX="504.0" layoutY="14.0" prefHeight="64.0" prefWidth="251.0" text="POPEYE" />
-            <Label layoutX="401.0" layoutY="240.0" prefHeight="30.0" prefWidth="170.0" styleClass="nameText" text="Username:" />
-            <Label layoutX="401.0" layoutY="281.0" prefHeight="30.0" prefWidth="170.0" styleClass="nameText" text="Password:" />
+            <Label layoutX="481.0" layoutY="240.0" prefHeight="30.0" prefWidth="90.0" styleClass="nameText" text="Username:" />
+            <Label layoutX="481.0" layoutY="281.0" prefHeight="30.0" prefWidth="90.0" styleClass="nameText" text="Password:" />
          </children>
       </AnchorPane>
    </center>

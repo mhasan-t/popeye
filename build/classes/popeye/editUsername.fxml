@@ -24,5 +24,6 @@
       <TextField fx:id="newUsername" layoutX="556.0" layoutY="217.0" prefHeight="26.0" prefWidth="242.0" />
       <TextField fx:id="newPass" layoutX="556.0" layoutY="255.0" prefHeight="26.0" prefWidth="242.0" />
       <Button layoutX="1148.0" layoutY="678.0" mnemonicParsing="false" onAction="#logoutBtnAction" prefHeight="26.0" prefWidth="117.0" styleClass="redBtn" text="Log Out" />
+      <Label fx:id="statusMsg" layoutX="647.0" layoutY="394.0" prefHeight="30.0" prefWidth="150.0" styleClass="infoText" />
    </children>
 </AnchorPane>

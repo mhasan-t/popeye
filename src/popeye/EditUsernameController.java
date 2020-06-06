@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -41,22 +42,35 @@ public class EditUsernameController implements Initializable {
     TextField newPass;
     @FXML
     TextField newUsername;
+    @FXML
+    Label statusMsg;
     
     @FXML
     private void updateButtonAction(ActionEvent event) throws IOException {
         String usrname = newUsername.getText(), 
                 pass = newPass.getText();
         
-        String query =  "update user set username ='"+usrname+"',password ='"+pass+"'where username = '"+currentUser+"'";
-        currentUser = usrname;
-       
-        try{
-            db.stmt.executeUpdate(query);
+        String usrExists = db.returnPassIfUserExists(usrname);
+        
+        if( usrExists == "-1" ){
+            String query =  "update user set username ='"+usrname+"',password ='"+pass+"'where username = '"+currentUser+"'";
+            currentUser = usrname;
+
+            try{
+                db.stmt.executeUpdate(query);
+                statusMsg.setText("Updated Succesfully!");
+            }
+            catch(SQLException e){
+    //            System.out.println("line52 profilescenecontroller");
+                statusMsg.setText("Error! Could not update!");
+                e.printStackTrace();
+            }
         }
-        catch(SQLException e){
-//            System.out.println("line52 profilescenecontroller");
-            e.printStackTrace();
+        else{
+            statusMsg.setText("Username already exists!");
         }
+        
+            
     }
     
     @FXML
