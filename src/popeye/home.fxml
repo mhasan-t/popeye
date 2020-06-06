@@ -25,9 +25,9 @@
    <center>
       <AnchorPane prefHeight="598.0" prefWidth="910.0" style="-fx-background-color: #edf4ff;" BorderPane.alignment="CENTER">
          <children>
-            <TilePane alignment="CENTER" layoutX="119.0" layoutY="128.0" onMouseClicked="#goToProfile" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <TilePane alignment="CENTER" layoutX="119.0" layoutY="128.0" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
-                  <VBox alignment="CENTER" prefHeight="228.0" prefWidth="151.0">
+                  <VBox alignment="CENTER" onMouseClicked="#goToProfileInfo" prefHeight="228.0" prefWidth="151.0">
                      <children>
                         <ImageView fitHeight="85.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true">
                            <image>

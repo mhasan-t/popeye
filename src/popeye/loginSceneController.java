@@ -36,7 +36,7 @@ public class loginSceneController implements Initializable {
     private Button loginBtn;
     
     
-    SqliteDatabase db=new SqliteDatabase();
+    SqliteDatabase db;
     
     @FXML
     private void loginButtonAction(ActionEvent event) {
@@ -57,7 +57,7 @@ public class loginSceneController implements Initializable {
             }
         }
         else{
-            loginMsg.setText("PASS NO MATCH");
+            loginMsg.setText("Wrong Password");
         }
         
         
@@ -112,6 +112,7 @@ public class loginSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        db=new SqliteDatabase();
     }    
     
 }

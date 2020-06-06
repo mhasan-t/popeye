@@ -1,0 +1,42 @@
+@font-face {
+    src: url('../../Fonts/BAUHS93.TTF');
+    src: url('../../Fonts/BRITANIC.TTF');
+    src: url('../../Fonts/AGENCYB.TTF');
+    src: url('../../Fonts/BERNHC.TTF');
+}
+
+#titleText{
+    -fx-font-family: 'Britannic Bold';
+    -fx-font-size: 45;
+}
+
+.tileText{
+    -fx-font-family: 'Bauhaus 93';
+    -fx-font-size: 20;
+}
+
+.infoText{
+    -fx-font-family: 'Agency FB';
+    -fx-font-size: 17;
+}
+
+
+.nameText{
+    -fx-font-family: 'Bernard MT Condensed';
+    -fx-font-size: 17;
+}
+
+#editBtn{
+    -fx-font-family: 'Bernard MT Condensed';
+    -fx-font-size: 17;
+}
+
+#updateBtn{
+    -fx-font-family: 'Bernard MT Condensed';
+    -fx-font-size: 17;
+}
+
+#editUsr{
+    -fx-font-family: 'Bernard MT Condensed';
+    -fx-font-size: 15;
+}

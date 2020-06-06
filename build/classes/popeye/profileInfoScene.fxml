@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #edf4ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popeye.ProfileInfoSceneController">
       <stylesheets>
   <URL value="@staticfiles/css/profile.css" />
 </stylesheets>
@@ -22,7 +24,13 @@
             <Label fx:id="nameInfo" layoutX="258.0" layoutY="231.0" prefHeight="30.0" prefWidth="341.0" styleClass="infoText" />
             <Label fx:id="ageInfo" layoutX="258.0" layoutY="261.0" prefHeight="30.0" prefWidth="341.0" styleClass="infoText" />
             <Label fx:id="heightInfo" layoutX="258.0" layoutY="291.0" prefHeight="30.0" prefWidth="341.0" styleClass="infoText" />
-            <Label fx:id="whatthefuck" layoutX="258.0" layoutY="321.0" prefHeight="30.0" prefWidth="341.0" styleClass="infoText" />
+            <Label fx:id="weightInfo" layoutX="258.0" layoutY="321.0" prefHeight="30.0" prefWidth="341.0" styleClass="infoText" />
+            <Button id="editBtn" fx:id="editBtn" layoutX="144.0" layoutY="417.0" mnemonicParsing="false" onAction="#goToProfileEdit" prefHeight="31.0" prefWidth="146.0" style="-fx-background-color: #34ebe1;" text="Edit" />
+            <Button fx:id="gobackBtn" layoutX="36.0" layoutY="34.0" mnemonicParsing="false" onAction="#goHome" prefHeight="11.0" prefWidth="30.0" style="-fx-background-color: #ff0048;" text="&lt;" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>

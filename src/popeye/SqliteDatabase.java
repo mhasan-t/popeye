@@ -19,12 +19,14 @@ public class SqliteDatabase {
     
     Connection c;
     Statement stmt = null;
+    public String status = "NO";
 
     SqliteDatabase(){
         try {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:database.db");
             stmt = c.createStatement();
+            status = "CREATED";
 //            stmt.executeUpdate("insert into user values('admin', '1234')");
 //            stmt.executeUpdate("create table user (username string, password string)");
             
@@ -160,6 +162,18 @@ public class SqliteDatabase {
         catch(SQLException e){
             
         }
+    }
+    
+    
+    ResultSet getUserInfo(String usrName){
+        try{
+            ResultSet rs = stmt.executeQuery("select * from user where username='"+usrName+"'");
+            return rs;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
     
   

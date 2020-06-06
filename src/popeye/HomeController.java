@@ -8,6 +8,7 @@ package popeye;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -39,14 +40,15 @@ public class HomeController implements Initializable {
     @FXML
     Label title;
     
-    public void goToProfile() throws IOException{
+
+    
+    @FXML
+    private void goToProfileInfo() throws IOException{
         FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(getClass().getResource("profileScene.fxml"));
+        loader.setLocation(getClass().getResource("profileInfoScene.fxml"));
         Parent parent = (Parent) loader.load();
-//         Parent menuSceneRoot = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-         
-         
-        ProfileSceneController controller;
+
+        ProfileInfoSceneController controller;
         controller = loader.getController();
         controller.setDB(db);
          controller.setUser(currentUser);
@@ -57,6 +59,7 @@ public class HomeController implements Initializable {
          
          window.setScene(scene);
          window.show();
+       
     }
     
     @Override
