@@ -22,7 +22,7 @@
    <center>
       <AnchorPane prefHeight="598.0" prefWidth="910.0" style="-fx-background-color: #edf4ff;" BorderPane.alignment="CENTER">
          <children>
-            <TilePane alignment="CENTER" layoutX="121.0" layoutY="180.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <TilePane alignment="CENTER" layoutX="128.0" layoutY="186.0" prefHeight="437.0" prefWidth="255.0" style="-fx-background-color: white;">
                <children>
                   <VBox alignment="CENTER" onMouseClicked="#goToProfileInfo" prefHeight="228.0" prefWidth="151.0">
                      <children>
@@ -39,7 +39,7 @@
                   </VBox>
                </children>
             </TilePane>
-            <TilePane alignment="CENTER" layoutX="348.0" layoutY="180.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <TilePane alignment="CENTER" layoutX="392.0" layoutY="186.0" onMouseClicked="#goToReminder" prefHeight="437.0" prefWidth="255.0" style="-fx-background-color: white;">
                <children>
                   <VBox alignment="CENTER" prefHeight="228.0" prefWidth="151.0">
                      <children>
@@ -56,7 +56,7 @@
                   </VBox>
                </children>
             </TilePane>
-            <TilePane alignment="CENTER" layoutX="581.0" layoutY="180.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <TilePane alignment="CENTER" layoutX="656.0" layoutY="186.0" onMouseClicked="#goToCalculator" prefHeight="437.0" prefWidth="255.0" style="-fx-background-color: white;">
                <children>
                   <VBox alignment="CENTER" prefHeight="228.0" prefWidth="151.0">
                      <children>
@@ -75,7 +75,7 @@
                </children>
             </TilePane>
             <Label id="titleText" fx:id="title" layoutX="464.0" layoutY="30.0" prefHeight="64.0" prefWidth="246.0" text="POPEYE" />
-            <TilePane alignment="CENTER" layoutX="805.0" layoutY="180.0" onMouseClicked="#goToFeed" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <TilePane alignment="CENTER" layoutX="917.0" layoutY="186.0" onMouseClicked="#goToFeed" prefHeight="437.0" prefWidth="255.0" style="-fx-background-color: white;">
                <children>
                   <VBox alignment="CENTER" prefHeight="228.0" prefWidth="151.0">
                      <children>
@@ -92,24 +92,7 @@
                   </VBox>
                </children>
             </TilePane>
-            <TilePane alignment="CENTER" layoutX="1042.0" layoutY="180.0" prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: white;">
-               <children>
-                  <VBox alignment="CENTER" prefHeight="228.0" prefWidth="151.0">
-                     <children>
-                        <ImageView fitHeight="85.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@staticfiles/images/Food-Waiter-icon.png" />
-                           </image>
-                           <VBox.margin>
-                              <Insets bottom="40.0" />
-                           </VBox.margin>
-                        </ImageView>
-                        <Label prefHeight="26.0" prefWidth="89.0" styleClass="tileText" text="Food plan" />
-                     </children>
-                  </VBox>
-               </children>
-            </TilePane>
-            <Button layoutX="1124.0" layoutY="679.0" mnemonicParsing="false" onAction="#logoutBtnAction" prefHeight="26.0" prefWidth="117.0" styleClass="redBtn" text="Log Out" />
+            <Button layoutX="1064.0" layoutY="678.0" mnemonicParsing="false" onAction="#logoutBtnAction" prefHeight="26.0" prefWidth="117.0" styleClass="redBtn" text="Log Out" />
          </children>
       </AnchorPane>
    </center>

@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -69,28 +70,209 @@ public class ProfileEditSceneController implements Initializable {
     
      @FXML
     private void updateButtonAction(ActionEvent event) {
-         System.out.println(currentUser);
+//         System.out.println(currentUser);
         String newName = name.getText();
+        String query= "";
+        String newAge=null, newWeight=null, newHeight=null;
         
-        int newAge = Integer.parseInt(age.getText()) , 
-                newWeight =  Integer.parseInt(weight.getText()), 
-                newHeight =  Integer.parseInt(height.getText()) ;
-                
-        
-//        SqliteDatabase db=new SqliteDatabase();
-
-        
-        String query =  "update user set age ="+newAge+",weight ="+newHeight+",height ="+newHeight+",fullname ='"+ newName +"'where username = '"+currentUser+"'";
+        if( age.getText().equals("")|| age.getText() == null){
+            
+            try{
+                ResultSet res = db.stmt.executeQuery("select username, age from user where username='"+currentUser+"'");
+                while(res.next()){
+                    if(res.getString("username").equals(currentUser)){
+//                        String oldAge = res.getString("age");
+//                        String oldWeight = res.getString("weight");
+//                        String oldHeight = res.getString("height");
+                        
+                        newAge = res.getString("age");
+                        
+                        if ( newAge!= null ){
+                            query =  "update user set age ="+newAge+" where username = '"+currentUser+"'";
        
-        try{
-            db.stmt.executeUpdate(query);
-            statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+                            try{
+                                db.stmt.executeUpdate(query);
+                                statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+                            }
+                            catch(SQLException e){
+                                statusMsg.setText("ERROR WHILE UPDATING PROFILE");
+                                e.printStackTrace();
+                            }
+                        }
+                        
+                        break;
+                    }
+                }
+            }
+            catch (Exception e){
+                    e.printStackTrace();
+                }
         }
-        catch(SQLException e){
-//            System.out.println("line52 profilescenecontroller");
-            statusMsg.setText("ERROR WHILE UPDATING PROFILE");
-            e.printStackTrace();
+        else{ //if age values are entered
+            newAge = age.getText();
+            query =  "update user set age ="+newAge+" where username = '"+currentUser+"'";
+       
+            try{
+                db.stmt.executeUpdate(query);
+                statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+            }
+            catch(SQLException e){
+                statusMsg.setText("ERROR WHILE UPDATING PROFILE");
+                e.printStackTrace();
+            }
         }
+        
+        
+        
+        //update height
+        if( height.getText().equals("")|| height.getText() == null){
+            
+            try{
+                ResultSet res = db.stmt.executeQuery("select username, height from user where username='"+currentUser+"'");
+                while(res.next()){
+                    if(res.getString("username").equals(currentUser)){
+                        
+                        newHeight = res.getString("height");
+                        
+                        if ( newHeight!= null ){
+                            query =  "update user set height ="+newHeight+" where username = '"+currentUser+"'";
+       
+                            try{
+                                db.stmt.executeUpdate(query);
+                                statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+                            }
+                            catch(SQLException e){
+                                statusMsg.setText("ERROR WHILE UPDATING PROFILE");
+                                e.printStackTrace();
+                            }
+                        }
+                        
+                        break;
+                    }
+                }
+            }
+            catch (Exception e){
+                    e.printStackTrace();
+                }
+        }
+        else{ //if height values are entered
+            newHeight = height.getText();
+            query =  "update user set height ="+newHeight+" where username = '"+currentUser+"'";
+       
+            try{
+                db.stmt.executeUpdate(query);
+                statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+            }
+            catch(SQLException e){
+                statusMsg.setText("ERROR WHILE UPDATING PROFILE");
+                e.printStackTrace();
+            }
+        }
+        
+        
+        //update weight
+        if( weight.getText().equals("")|| weight.getText() == null){
+            
+            try{
+                ResultSet res = db.stmt.executeQuery("select username, weight from user where username='"+currentUser+"'");
+                while(res.next()){
+                    if(res.getString("username").equals(currentUser)){
+                        
+                        newWeight = res.getString("weight");
+                        
+                        if ( newWeight!= null ){
+                            query =  "update user set weight ="+newWeight+" where username = '"+currentUser+"'";
+       
+                            try{
+                                db.stmt.executeUpdate(query);
+                                statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+                            }
+                            catch(SQLException e){
+                                statusMsg.setText("ERROR WHILE UPDATING PROFILE");
+                                e.printStackTrace();
+                            }
+                        }
+                        
+                        break;
+                    }
+                }
+            }
+            catch (Exception e){
+                    e.printStackTrace();
+                }
+        }
+        else{ 
+            newWeight = weight.getText();
+            query =  "update user set weight ="+newWeight+" where username = '"+currentUser+"'";
+       
+            try{
+                db.stmt.executeUpdate(query);
+                statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+            }
+            catch(SQLException e){
+                statusMsg.setText("ERROR WHILE UPDATING PROFILE");
+                e.printStackTrace();
+            }
+        }
+        
+        //update name
+        if( name.getText().equals("")|| name.getText() == null){
+            
+            try{
+                ResultSet res = db.stmt.executeQuery("select username, fullname from user where username='"+currentUser+"'");
+                while(res.next()){
+                    if(res.getString("username").equals(currentUser)){
+                        
+                        newName = res.getString("fullname");
+                        
+                        if ( newName!= null ){
+                            query =  "update user set fullname ='"+newName+"' where username = '"+currentUser+"'";
+       
+                            try{
+                                db.stmt.executeUpdate(query);
+                                statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+                            }
+                            catch(SQLException e){
+                                statusMsg.setText("ERROR WHILE UPDATING PROFILE");
+                                e.printStackTrace();
+                            }
+                        }
+                        
+                        break;
+                    }
+                }
+            }
+            catch (Exception e){
+                    e.printStackTrace();
+                }
+        }
+        else{ 
+            newName = name.getText();
+            query =  "update user set fullname ='"+newName+"' where username = '"+currentUser+"'";
+       
+            try{
+                db.stmt.executeUpdate(query);
+                statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+            }
+            catch(SQLException e){
+                statusMsg.setText("ERROR WHILE UPDATING PROFILE");
+                e.printStackTrace();
+            }
+        }
+                
+
+//query =  "update user set age ="+newAge+",weight ="+newHeight+",height ="+newHeight+",fullname ='"+ newName +"'where username = '"+currentUser+"'";
+//       
+//            try{
+//                db.stmt.executeUpdate(query);
+//                statusMsg.setText("PROFILE UPDATED SUCCESFULLY");
+//            }
+//            catch(SQLException e){
+//                statusMsg.setText("ERROR WHILE UPDATING PROFILE");
+//                e.printStackTrace();
+//            }
+        
+        
         
         
     }

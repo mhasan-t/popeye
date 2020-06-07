@@ -30,7 +30,7 @@ public class SqliteDatabase {
 //            stmt.executeUpdate("insert into post values('admin', 'whatwhatwhatwhatwhatwhat')");
 //            this.enterPostTableData("test", "testing");
 //            System.out.println("executed");
-//            stmt.executeUpdate("create table post (username string, post string)");
+//            stmt.executeUpdate("create table reminder (username string, note string, hour string, mins string)");
 //            System.out.println("new table created");
 
         } catch (ClassNotFoundException e) {
@@ -154,6 +154,26 @@ public class SqliteDatabase {
             e.printStackTrace();
         }
         return found;
+    }
+    
+    
+    
+    int getWeight(String n){
+        try{
+            ResultSet res = stmt.executeQuery("select username, weight from user where username='"+n+"'");
+            while(res.next()){
+                if(res.getString("username").equals(n)){
+                    if( res.getString("weight") == null ){
+                        return 0;
+                    }
+                    else return Integer.parseInt(res.getString("weight"));
+                }
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return 0;
     }
     
     ResultSet returnTableData(String tablename){

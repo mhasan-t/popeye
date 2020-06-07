@@ -1,0 +1,27 @@
+@font-face {
+    src: url('../../Fonts/BAUHS93.TTF');
+    src: url('../../Fonts/BRITANIC.TTF');
+    src: url('../../Fonts/AGENCYB.TTF');
+    src: url('../../Fonts/ITCBLKAD.TTF');
+    src: url('../../Fonts/MATURASC.TTF');
+    src: url('../../Fonts/HARNGTON.TTF');
+}
+
+
+
+
+#reminderText{
+    -fx-font-family: 'Harrington';
+    -fx-font-size: 45;
+}
+
+#time{
+    -fx-font-family: 'Matura MT Script Capitals';
+    -fx-font-size: 25;
+    -fx-text-fill: #00ff15;
+}
+ 
+#note{
+    -fx-font-family: 'Blackadder ITC';
+    -fx-font-size: 20;
+}

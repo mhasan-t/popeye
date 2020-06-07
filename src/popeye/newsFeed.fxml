@@ -5,34 +5,58 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #edf4ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popeye.NewsFeedController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #edf4ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="popeye.NewsFeedController">
    <stylesheets>
   <URL value="@staticfiles/css/feed.css" />
 </stylesheets>
     <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="720.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
             <Label id="titleText" fx:id="title" layoutX="556.0" layoutY="14.0" prefHeight="64.0" prefWidth="244.0" text="POPEYE" />
-            <Button fx:id="gobackBtn" layoutX="34.0" layoutY="31.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="30.0" style="-fx-background-color: #ff0048;" text="&lt;" textFill="WHITE">
+            <Button fx:id="gobackBtn" layoutX="34.0" layoutY="31.0" mnemonicParsing="false" onAction="#goHome" prefHeight="11.0" prefWidth="30.0" style="-fx-background-color: #ff0048;" text="&lt;" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
             <Label layoutX="800.0" layoutY="173.0" prefHeight="36.0" prefWidth="296.0" styleClass="britanicPromt" text="Write something..." />
-            <Button fx:id="postBtn" layoutX="1111.0" layoutY="350.0" mnemonicParsing="false" onAction="#postButtonAction" prefHeight="45.0" prefWidth="130.0" styleClass="greenBtn" text="Post" />
-            <ScrollPane layoutX="34.0" layoutY="173.0" prefHeight="530.0" prefWidth="658.0">
+            <Button fx:id="postBtn" layoutX="1111.0" layoutY="350.0" mnemonicParsing="false" onAction="#postButtonAction" prefHeight="45.0" prefWidth="130.0" styleClass="greenBtn" text="Post">
+               <effect>
+                  <Glow />
+               </effect></Button>
+            <ScrollPane fx:id="feedPane" layoutX="34.0" layoutY="173.0" prefHeight="530.0" prefWidth="746.0" AnchorPane.topAnchor="173.0">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
               </content>
             </ScrollPane>
             <Label layoutX="34.0" layoutY="137.0" prefHeight="36.0" prefWidth="296.0" styleClass="britanicPromt" text="Things other's are talking about..." />
-            <Label fx:id="statusMsg" layoutX="95.0" layoutY="414.0" prefHeight="39.0" prefWidth="444.0" styleClass="infoText" />
-            <TextField fx:id="makeApost" layoutX="800.0" layoutY="216.0" prefHeight="120.0" prefWidth="442.0" />
-            <Button layoutX="1148.0" layoutY="669.0" mnemonicParsing="false" onAction="#logoutBtnAction" prefHeight="26.0" prefWidth="117.0" styleClass="redBtn" text="Log Out" />
+            <Label fx:id="statusMsg" alignment="CENTER_RIGHT" layoutX="799.0" layoutY="424.0" prefHeight="39.0" prefWidth="444.0" styleClass="infoText" />
+            <TextField fx:id="makeApost" alignment="TOP_LEFT" layoutX="800.0" layoutY="216.0" prefHeight="120.0" prefWidth="442.0" />
+            <Button layoutX="1148.0" layoutY="669.0" mnemonicParsing="false" onAction="#logoutBtnAction" prefHeight="26.0" prefWidth="117.0" styleClass="redBtn" text="Log Out">
+               <effect>
+                  <Glow />
+               </effect></Button>
+            <Button fx:id="refreshBtn" layoutX="282.0" layoutY="142.0" mnemonicParsing="false" onAction="#refreshFeed" prefHeight="26.0" prefWidth="26.0" style="-fx-background-radius: 2em;" styleClass="greenBtn">
+               <graphic>
+                  <ImageView fitHeight="12.0" fitWidth="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@staticfiles/images/refresh.png" />
+                     </image>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <Glow />
+               </effect>
+            </Button>
          </children></AnchorPane>
    </center>
 </BorderPane>

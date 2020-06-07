@@ -32,6 +32,7 @@ import javafx.stage.Stage;
  */
 public class loginSceneController implements Initializable {
     
+    
     @FXML
     private Label loginMsg;
     
@@ -43,6 +44,11 @@ public class loginSceneController implements Initializable {
     
     
     SqliteDatabase db;
+    public void setDB(SqliteDatabase d){
+        db = d;
+    }
+    
+    
     
     @FXML
     private void loginButtonAction(ActionEvent event) {
@@ -123,7 +129,7 @@ public class loginSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        db=new SqliteDatabase();
+//        db=new SqliteDatabase();
         
         
         

@@ -27,7 +27,7 @@
             <Label layoutX="421.0" layoutY="334.0" prefHeight="39.0" prefWidth="149.0" styleClass="nameText" text="Weight (kg):" />
             <TextField fx:id="weight" layoutX="627.0" layoutY="341.0" prefHeight="26.0" prefWidth="192.0" />
             <Button id="updateBtn" layoutX="708.0" layoutY="419.0" mnemonicParsing="false" onAction="#updateButtonAction" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #008710;" text="Update" />
-            <Label fx:id="statusMsg" layoutX="220.0" layoutY="513.0" prefHeight="39.0" prefWidth="400.0" />
+            <Label fx:id="statusMsg" alignment="CENTER_RIGHT" layoutX="418.0" layoutY="569.0" prefHeight="39.0" prefWidth="400.0" />
             <Button fx:id="gobackBtn" layoutX="45.0" layoutY="31.0" mnemonicParsing="false" onAction="#goToProfileInfo" prefHeight="11.0" prefWidth="30.0" style="-fx-background-color: #ff0048;" text="&lt;" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />

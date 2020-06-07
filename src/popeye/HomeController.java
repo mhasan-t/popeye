@@ -84,6 +84,47 @@ public class HomeController implements Initializable {
        
     }
     
+        @FXML
+    private void goToReminder() throws IOException{
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(getClass().getResource("reminderScene.fxml"));
+        Parent parent = (Parent) loader.load();
+
+        ReminderSceneController controller;
+        controller = loader.getController();
+        controller.setDB(db);
+         controller.setUser(currentUser);
+         controller.initialize(null, null);
+         
+         Stage window = (Stage) title.getScene().getWindow();
+         Scene scene = new Scene(parent);
+         
+         window.setScene(scene);
+         window.show();
+       
+    }
+    
+        @FXML
+    private void goToCalculator() throws IOException{
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(getClass().getResource("calculatorScene.fxml"));
+        Parent parent = (Parent) loader.load();
+
+        CalculatorSceneController controller;
+        controller = loader.getController();
+        controller.setDB(db);
+         controller.setUser(currentUser);
+         controller.initialize(null, null);
+         
+         Stage window = (Stage) title.getScene().getWindow();
+         Scene scene = new Scene(parent);
+         
+         window.setScene(scene);
+         window.show();
+    }
+    
+    
+    
     @FXML
     private void logoutBtnAction(ActionEvent event){
         try{
@@ -112,6 +153,7 @@ public class HomeController implements Initializable {
                 e.printStackTrace();
         }
     }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
